@@ -12,8 +12,17 @@ writeFile('./asyncOutput.txt', 'Written with fs.writeFile (asynchronous).', (err
     if(err){console.log(err);return}
 })
 
-writeFile('./notes.txt', ' New line', {flag:'a'}, (err)=>{
+writeFile('./notes.txt', ' New text.', {flag:'a'}, (err)=>{
     if(err){console.log(err);return}
+})
+
+writeFile('./asyncOutput.txt', 'Attempt to overwrite.', {flag:'wx'}, (err)=>{
+    if(err){console.log(err);return}
+})
+
+readFile('./asyncOutput.txt', 'utf8', (err, firstData) =>{
+    if(err){console.log(err);return}
+    else{console.log(firstData, "Just checking.")}
 })
 
 // Sync
