@@ -1,1 +1,0 @@
-Written with fs.writeFile (asynchronous).
